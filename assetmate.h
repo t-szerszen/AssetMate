@@ -17,6 +17,10 @@ public:
     AssetMate(QWidget *parent = nullptr);
     ~AssetMate();
 
+private slots:
+    void on_calcSavingsButton_clicked();
+    void on_calcMortgageButton_clicked();
+
 private:
     Ui::AssetMate *ui;
 };

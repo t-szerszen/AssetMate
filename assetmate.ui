@@ -6,20 +6,296 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1280</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>AssetMate</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="tabShape">
+       <enum>QTabWidget::TabShape::Triangular</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="mortgage">
+       <attribute name="title">
+        <string>Kredyty</string>
+       </attribute>
+       <widget class="QLabel" name="mortgageResultLabel">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>185</y>
+          <width>401</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QSplitter" name="splitter_9">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>120</y>
+          <width>151</width>
+          <height>301</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <widget class="QSplitter" name="splitter_4">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Kwota kredytu</string>
+          </property>
+         </widget>
+         <widget class="QDoubleSpinBox" name="loanAmountSpinBox">
+          <property name="suffix">
+           <string> PLN</string>
+          </property>
+          <property name="maximum">
+           <double>1000000000.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>25000.000000000000000</double>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QSplitter" name="splitter_5">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Oprocentowanie</string>
+          </property>
+         </widget>
+         <widget class="QDoubleSpinBox" name="interestRateSpinBox">
+          <property name="suffix">
+           <string> %</string>
+          </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QSplitter" name="splitter_6">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Liczba miesięcy</string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="loanMonthsSpinBox">
+          <property name="suffix">
+           <string> Months</string>
+          </property>
+          <property name="maximum">
+           <number>1000000</number>
+          </property>
+          <property name="singleStep">
+           <number>12</number>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QSplitter" name="splitter_8">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>Nadwyżka</string>
+          </property>
+         </widget>
+         <widget class="QDoubleSpinBox" name="overpaymentSpinBox">
+          <property name="suffix">
+           <string> PLN</string>
+          </property>
+          <property name="maximum">
+           <double>100000000.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>100.000000000000000</double>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QSplitter" name="splitter_7">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Rodzaj rat:</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="equalInstallmentRadio">
+          <property name="text">
+           <string>Raty główne</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="radioButton_2">
+          <property name="text">
+           <string>Raty malejące</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QPushButton" name="calcMortgageButton">
+         <property name="text">
+          <string>Oblicz</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="savings">
+       <attribute name="title">
+        <string>Oszczędności</string>
+       </attribute>
+       <widget class="QLCDNumber" name="lcdNumber">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>150</y>
+          <width>411</width>
+          <height>221</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>160</y>
+          <width>166</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QSplitter" name="splitter">
+           <property name="orientation">
+            <enum>Qt::Orientation::Vertical</enum>
+           </property>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Twój cel:</string>
+            </property>
+           </widget>
+           <widget class="QDoubleSpinBox" name="goalValueSpinBox">
+            <property name="prefix">
+             <string> </string>
+            </property>
+            <property name="suffix">
+             <string> PLN</string>
+            </property>
+            <property name="minimum">
+             <double>0.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>100000000000000000.000000000000000</double>
+            </property>
+            <property name="singleStep">
+             <double>100.000000000000000</double>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSplitter" name="splitter_3">
+           <property name="orientation">
+            <enum>Qt::Orientation::Vertical</enum>
+           </property>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Ile miesięcy:</string>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="monthsSpinBox">
+            <property name="suffix">
+             <string> MIESIĘCY</string>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>lub</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSplitter" name="splitter_2">
+           <property name="orientation">
+            <enum>Qt::Orientation::Vertical</enum>
+           </property>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Miesięczna rata:</string>
+            </property>
+           </widget>
+           <widget class="QDoubleSpinBox" name="wageSpinBox">
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="suffix">
+             <string> PLN</string>
+            </property>
+            <property name="maximum">
+             <double>100000000000.000000000000000</double>
+            </property>
+            <property name="singleStep">
+             <double>100.000000000000000</double>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="calcSavingsButton">
+           <property name="text">
+            <string>Oblicz</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="resultLabel">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>380</y>
+          <width>411</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1280</width>
      <height>21</height>
     </rect>
    </property>

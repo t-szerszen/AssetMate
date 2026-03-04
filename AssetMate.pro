@@ -10,10 +10,16 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    assetmate.cpp
+    assetmate.cpp \
+    mortgageengine.cpp \
+    savingengine.cpp \
+    validator.cpp
 
 HEADERS += \
-    assetmate.h
+    assetmate.h \
+    mortgageengine.h \
+    savingengine.h \
+    validator.h
 
 FORMS += \
     assetmate.ui
@@ -22,3 +28,8 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
+
+RESOURCES += \
+    src.qrc
