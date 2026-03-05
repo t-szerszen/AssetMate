@@ -16,6 +16,9 @@ AssetMate::~AssetMate()
     delete ui;
 }
 
+// =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+// Karta oszczędności
+// =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 void AssetMate::on_calcSavingsButton_clicked()
 {
     SavingEngine savingEngine;
@@ -58,14 +61,17 @@ void AssetMate::on_calcSavingsButton_clicked()
     }
 }
 
+// =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+// Karta kredytów
+// =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 void AssetMate::on_calcMortgageButton_clicked()
 {
-    MortgageEngine engine;
+    MortgageEngine mortgageEngine;
 
     double loanAmount = ui->loanAmountSpinBox->value();
     double annualRate = ui->interestRateSpinBox->value();
     int months = ui->loanMonthsSpinBox->value();
-    double overpayment = ui->overpaymentSpinBox->value(); // Nowe pole
+    double overpayment = ui->overpaymentSpinBox->value();
 
     if (loanAmount <= 0 || months <= 0) {
         ui->mortgageResultLabel->setText("Błąd: Wprowadź poprawną kwotę i okres kredytowania.");
@@ -73,13 +79,13 @@ void AssetMate::on_calcMortgageButton_clicked()
     }
 
     // Obliczamy wariant podstawowy
-    MortgageResult baseResult = engine.calculateEqualInstallments(loanAmount, annualRate, months);
+    MortgageResult baseResult = mortgageEngine.calculateEqualInstallments(loanAmount, annualRate, months);
 
     QString reportText;
 
     // Jeśli użytkownik zadeklarował nadpłatę, odpalamy magię
     if (overpayment > 0.0) {
-        MortgageResult overpayResult = engine.calculateWithOverpayment(loanAmount, annualRate, months, overpayment);
+        MortgageResult overpayResult = mortgageEngine.calculateWithOverpayment(loanAmount, annualRate, months, overpayment);
 
         // Obliczamy oszczędności!
         double savedInterest = baseResult.totalInterest - overpayResult.totalInterest;

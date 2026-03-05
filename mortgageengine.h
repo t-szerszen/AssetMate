@@ -14,7 +14,6 @@ public:
     MortgageEngine();
 
     MortgageResult calculateEqualInstallments(double loanAmount, double annualRate, int months) const;
-    MortgageResult calculateDecreasingInstallments(double loanAmount, double annualRate, int months) const;
     MortgageResult calculateWithOverpayment(double loanAmount, double annualRate, int months, double monthlyOverpayment) const;
 };
 

@@ -28,34 +28,6 @@ MortgageResult MortgageEngine::calculateEqualInstallments(double loanAmount, dou
     return result;
 }
 
-MortgageResult MortgageEngine::calculateDecreasingInstallments(double loanAmount, double annualRate, int months) const {
-    MortgageResult result;
-    if (loanAmount <= 0 || months <= 0) return result;
-
-    double capitalPart = loanAmount / months; // Część kapitałowa jest stała
-    double monthlyRate = (annualRate / 100.0) / 12.0;
-
-    double remainingCapital = loanAmount;
-    result.totalInterest = 0.0;
-
-    // Symulacja miesiąc po miesiącu - najlepsza metoda dla rat malejących
-    for (int i = 0; i < months; ++i) {
-        double currentInterest = remainingCapital * monthlyRate;
-        result.totalInterest += currentInterest;
-
-        // Zapisujemy pierwszą ratę, by pokazać ją użytkownikowi w UI
-        if (i == 0) {
-            result.firstInstallment = capitalPart + currentInterest;
-        }
-
-        remainingCapital -= capitalPart;
-    }
-
-    result.totalCost = loanAmount + result.totalInterest;
-
-    return result;
-}
-
 MortgageResult MortgageEngine::calculateWithOverpayment(double loanAmount, double annualRate, int months, double monthlyOverpayment) const {
     MortgageResult result;
     if (loanAmount <= 0 || months <= 0) return result;
