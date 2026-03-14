@@ -1,0 +1,168 @@
+/* =======================================================
+   GLOBALNE USTAWIENIA
+   ======================================================= */
+QWidget {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    color: #f8fafc; /* Jasnoszary/Biały tekst */
+    background-color: #0f172a; /* Głębokiego tło całej aplikacji */
+}
+
+QMainWindow {
+    background-color: #0f172a;
+}
+
+/* =======================================================
+   KARTY (QTabWidget)
+   ======================================================= */
+QTabWidget::pane {
+    border: 1px solid #334155;
+    border-radius: 8px;
+    background-color: #1e293b; /* Nieco jaśniejsze tło dla zawartości kart */
+    margin-top: -1px; /* Ukrywa podwójną linię */
+}
+
+QTabBar::tab {
+    background-color: #0f172a;
+    color: #94a3b8; /* Zgaszony tekst dla nieaktywnych kart */
+    padding: 12px 24px;
+    border: 1px solid transparent;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: 600;
+}
+
+QTabBar::tab:selected {
+    color: #f8fafc;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-bottom: 2px solid #3b82f6; /* Niebieski akcent pod aktywną kartą */
+}
+
+QTabBar::tab:hover:!selected {
+    color: #e2e8f0;
+    background-color: #162032;
+}
+
+/* =======================================================
+   POLA WPROWADZANIA (SpinBox / DoubleSpinBox)
+   ======================================================= */
+QSpinBox, QDoubleSpinBox {
+    background-color: #0f172a;
+    color: #f8fafc;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 8px 12px;
+    min-width: 120px;
+    font-size: 14px;
+}
+
+QSpinBox:hover, QDoubleSpinBox:hover {
+    border-color: #475569;
+}
+
+QSpinBox:focus, QDoubleSpinBox:focus {
+    border-color: #3b82f6;
+    background-color: #162032;
+}
+
+/* --- KONTENERY PRZYCISKÓW --- */
+QSpinBox::up-button, QDoubleSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right;
+    width: 24px;
+    border-left: 1px solid #334155;
+    border-bottom: 1px solid #334155;
+    border-top-right-radius: 6px;
+    background-color: #1e293b; /* Lekko jaśniejsze tło dla przycisku */
+}
+
+QSpinBox::down-button, QDoubleSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right;
+    width: 24px;
+    border-left: 1px solid #334155;
+    border-bottom-right-radius: 6px;
+    background-color: #1e293b;
+}
+
+/* Efekt najechania myszką na przycisk */
+QSpinBox::up-button:hover, QDoubleSpinBox::up-button:hover,
+QSpinBox::down-button:hover, QDoubleSpinBox::down-button:hover {
+    background-color: #334155;
+}
+
+/* --- IKONY STRZAŁEK (Wbudowane wektory SVG) --- */
+QSpinBox::up-arrow, QDoubleSpinBox::up-arrow {
+    image: url(:/arrow_up.jpg);
+    width: 25px;
+    height: 25px;
+}
+
+QSpinBox::down-arrow, QDoubleSpinBox::down-arrow {
+    image: url(:/arrow_down.jpg);
+    width: 25px;
+    height: 25px;
+}
+
+/* =======================================================
+   PRZYCISKI (QPushButton)
+   ======================================================= */
+QPushButton {
+    background-color: #3b82f6; /* Główny niebieski */
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+}
+
+QPushButton:hover {
+    background-color: #2563eb; /* Ciemniejszy niebieski na hover */
+}
+
+QPushButton:pressed {
+    background-color: #1d4ed8;
+}
+
+QPushButton:disabled {
+    background-color: #334155;
+    color: #94a3b8;
+}
+
+/* =======================================================
+   ETYKIETY I RAPORTY (QLabel)
+   ======================================================= */
+QLabel {
+    background: transparent; /* Zwykłe etykiety nie powinny mieć tła */
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+/* Specjalne panele wyników */
+QLabel#mortgageResultLabel, QLabel#resultLabel {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 15px;
+}
+
+/* =======================================================
+   EKRAN LCD (QLCDNumber)
+   ======================================================= */
+QLCDNumber {
+    background-color: #0f172a;
+    color: #34d399; /* Cyfrowa, jasna zieleń */
+    border: 2px solid #334155;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+/* =======================================================
+   UKŁAD (Splittery i Scrollbary)
+   ======================================================= */
+QSplitter::handle {
+    background-color: transparent;
+}
